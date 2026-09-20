@@ -1,0 +1,1 @@
+SELECT IF(10 > 5, 1, 0) AS result

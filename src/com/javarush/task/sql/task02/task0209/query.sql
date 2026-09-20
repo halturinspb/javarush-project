@@ -1,0 +1,1 @@
+select nullif(10, 5) as result;

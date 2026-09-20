@@ -1,0 +1,5 @@
+select department,position,COUNT(*) AS total
+from employee
+group by  department,position
+having total > 1  and position = 'frontend developer'
+limit 1;

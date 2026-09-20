@@ -1,0 +1,5 @@
+-- Write your code here:
+select required, identifier, description
+FROM parts
+WHERE description IS NULL
+   OR description IS TRUE;
