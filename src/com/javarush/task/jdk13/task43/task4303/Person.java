@@ -7,6 +7,9 @@ package com.javarush.task.jdk13.task43.task4303;
 //import org.apache.commons.lang3.builder.StandardToStringStyle;
 //import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import org.apache.commons.lang3.builder.StandardToStringStyle;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class Person {
     private String name;
     private int age;
@@ -24,8 +27,15 @@ public class Person {
 
     @Override
     public String toString() {
-        //напишите тут ваш код
+        StandardToStringStyle style = new StandardToStringStyle();
 
-        return null;
+        style.setUseClassName(false);
+        style.setUseIdentityHashCode(false);
+        style.setContentStart("This persons ");
+        style.setFieldNameValueSeparator(" is ");
+        style.setFieldSeparator("; ");
+        style.setContentEnd(".");
+
+        return ToStringBuilder.reflectionToString(this, style, true);
     }
 }

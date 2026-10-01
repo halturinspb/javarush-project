@@ -5,6 +5,8 @@ package com.javarush.task.jdk13.task43.task4301;
 */
 
 //import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+
 import java.util.Objects;
 
 public class Candidate {
@@ -27,9 +29,20 @@ public class Candidate {
 
     @Override
     public boolean equals(Object obj) {
-        //напишите тут ваш код
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
 
-        return false;
+        return EqualsBuilder.reflectionEquals(
+                this,
+                obj,
+                true,
+                null,
+                "name", "age", "height", "weight"
+        );
     }
 
     @Override

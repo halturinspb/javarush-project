@@ -13,4 +13,3 @@ public abstract class Money {
 
     public abstract String getCurrencyName();
 }
-
