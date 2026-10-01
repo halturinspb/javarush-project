@@ -6,6 +6,8 @@ package com.javarush.task.jdk13.task43.task4304;
 
 //import org.apache.commons.lang3.StringUtils;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Person implements Comparable<Person> {
 
     private String name;
@@ -27,8 +29,6 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person o) {
-        //напишите тут ваш код
-
-        return 0;
+        return StringUtils.compare(this.name, o.name);
     }
 }

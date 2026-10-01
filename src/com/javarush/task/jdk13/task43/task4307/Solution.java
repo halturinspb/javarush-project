@@ -6,6 +6,8 @@ package com.javarush.task.jdk13.task43.task4307;
 Шило на мыло
 */
 
+import java.util.Objects;
+
 public class Solution {
 
     public static void main(String[] args) {
@@ -18,6 +20,14 @@ public class Solution {
 
     public static void printFirstNonNull(final String... values) {
 //        System.out.println(ObjectUtils.firstNonNull(values));
+        if(!Objects.isNull(values)){
+            for (String value : values) {
+                if(Objects.nonNull(value)){
+                    System.out.println(value);
+                    break;
+                }
+            }
+        }
     }
 
     public static void printDefaultValueIfNullObject(final String[] values, final String defaultValue) {
