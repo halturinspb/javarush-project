@@ -1,0 +1,18 @@
+package com.javarush.task.jdk13.task41.task4102;
+
+public class WithChicken extends PizzaDecorator {
+
+    public WithChicken(Pizza pizza) {
+        super(pizza);
+    }
+
+    @Override
+    public double getCost() {
+        return pizza.getCost() + 20;
+    }
+
+    @Override
+    public String getIngredients() {
+        return super.getIngredients()+", курица";
+    }
+}
